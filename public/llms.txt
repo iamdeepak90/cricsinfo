@@ -1,0 +1,63 @@
+# T20 World Cup 2026 News
+
+> T20 World Cup 2026 News (https://t20worldcupnews.com) provides coverage of the ICC Men's T20 World Cup 2026, including match previews, live updates, post-match reports, team and player analysis, statistics, and data-driven predictions.
+
+Site: https://t20worldcupnews.com
+Last updated: 25 December, 2025
+Learn more about llms.txt: https://llmstxt.org/
+
+Independent site disclaimer:
+- T20 World Cup News is independent and not affiliated with or endorsed by the ICC, BCCI, or any official governing body.
+
+Coverage focus:
+- Match coverage: previews, pitch/weather notes, live updates, post-match reports, predictions
+- Team analysis: squads, form, tactics, strengths/weaknesses, prospects
+- Player focus: profiles, form/role analysis, comparisons, fantasy value notes
+- Statistical analysis: records, head-to-head, venue trends, leaderboards
+- News & updates: injuries, squad changes, official announcements, schedule/venue updates
+
+Recommended citation format:
+Source: T20 World Cup 2026 News (https://t20worldcupnews.com)
+Article: <Article Title>
+Published: <Publication Date>
+
+## Key pages
+- [Homepage](https://t20worldcupnews.com): Latest news and featured coverage
+- [Schedule](https://t20worldcupnews.com/t20-world-cup-schedule-list): Fixtures and match dates
+- [Teams](https://t20worldcupnews.com/t20-world-cup-qualified-teams): Qualified teams list
+- [Venues guide](https://t20worldcupnews.com/t20-world-cup-venues-guide): Venue details and ground coverage
+- [Format](https://t20worldcupnews.com/t20-world-cup-format): Tournament format and rules
+
+## Team coverage
+- [India squad](https://t20worldcupnews.com/indian-squad-full-players-list): India squad list and coverage hub
+- [Pakistan squad & schedule](https://t20worldcupnews.com/pakistan-squad-schedule): Pakistan squad details and fixtures
+- [Australia squad](https://t20worldcupnews.com/australia-squad): Australia squad details and team analysis
+- [England squad](https://t20worldcupnews.com/england-squad): England squad details and team analysis
+
+## Predictions
+- [All match predictions](https://t20worldcupnews.com/category/predictions): Match-by-match predictions archive
+- [India vs Pakistan prediction](https://t20worldcupnews.com/india-vs-pakistan-prediction): Marquee match prediction page
+
+## Players and statistics
+- [Top players](https://t20worldcupnews.com/top-players-t20-world-cup): Player analysis and watchlists
+- [Winners list](https://t20worldcupnews.com/t20-world-cup-winners-list): Historical winners coverage
+- [Records](https://t20worldcupnews.com/t20-world-cup-records): Tournament records hub
+- [Statistics](https://t20worldcupnews.com/t20-world-cup-statistics): Tournament statistics hub
+
+## Crawl resources
+- [XML sitemap](https://t20worldcupnews.com/sitemap.xml): Site URL index for crawlers
+- [robots.txt](https://t20worldcupnews.com/robots.txt): Crawl directives
+
+## Reference sources
+- [ICC Official](https://www.icc-cricket.com): Official tournament and records reference
+- [BCCI Official](https://www.bcci.tv): India cricket board updates and releases
+- [ESPN Cricinfo](https://www.espncricinfo.com): Statistics and match info reference
+- [Wisden](https://www.wisden.com): Cricket writing and historical stats reference
+
+## Contact and social
+- [Editorial contact](mailto:editor@t20worldcupnews.com): Editorial queries
+- [Press inquiries](mailto:press@t20worldcupnews.com): Media and press
+- [Corrections](mailto:corrections@t20worldcupnews.com): Report inaccuracies
+- [Twitter/X](https://twitter.com/t20worldcupnews): Social updates
+- [Instagram](https://instagram.com/t20worldcupnews): Social updates
+- [Facebook](https://facebook.com/t20worldcupnews): Social updates
