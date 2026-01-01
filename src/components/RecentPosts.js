@@ -11,7 +11,7 @@ export default async function RecentPosts(){
     {posts.map((post) => (
       <Link key={post.documentId} className="recent-item" href={`/${post.slug}`}>
         <Image
-            src={post.FeaturedImage.url}
+            src={`https://admin.cricsinfo.com${post.FeaturedImage.url}`}
             width={78}
             height={90}
             alt={post.FeaturedImage.alternativeText}
