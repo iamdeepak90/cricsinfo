@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
+  trailingSlash: false,
+
   images: {
-    domains: ['ap-south-1.graphassets.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -11,6 +12,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'media.graphassets.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.graphassets.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'admin.cricsinfo.com',
       },
     ],
     minimumCacheTTL: 31536000,

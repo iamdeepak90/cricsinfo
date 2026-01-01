@@ -1,0 +1,58 @@
+.wrap {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  transition: all 0.4s ease;
+  border: 1px solid;
+  border-left: none;
+}
+.btn:hover {
+  width: 50px;
+}
+.facebook-icon:hover{
+  background: #1877F2;
+  border-color: #1877F2;
+}
+.facebook-icon:hover svg path, .x-icon:hover svg path, .linkedin-icon:hover svg path, .reddit-icon:hover svg path, .pinterest-icon:hover svg path, .whatsapp-icon:hover svg path {
+  fill: #fff;
+}
+.x-icon:hover{
+  background: #000;
+  border-color: #000;
+}
+.linkedin-icon:hover{
+  background: #0077B5;
+  border-color: #0077B5;
+}
+.reddit-icon:hover{
+  background: #FF4500;
+  border-color: #FF4500;
+}
+.pinterest-icon:hover{
+  background: #E60023;
+  border-color: #E60023;
+}
+.whatsapp-icon:hover{
+  background: #25D366;
+  border-color: #25D366;
+}
+@media (max-width: 768px) {
+  .wrap {
+    display: none;
+  }
+}

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { getPostBySlug, getAllPostSlugs, getRelatedPosts } from "@/lib/queries";
+import { getPostBySlug, getRelatedPosts } from "@/lib/queries";
 import { formatDate, readTime } from "@/lib/utils";
-import { buildMetadata } from "@/lib/seo";
+import { generateSEO } from "@/lib/seo";
 import { generateBlogPostSchema, SchemaScript } from "@/lib/schema";
 import dynamic from 'next/dynamic';
 import Image from "next/image";
@@ -11,21 +11,25 @@ const RelatedPosts = dynamic(() => import('@/components/RelatedPosts'), {
   loading: () => <div className="skeleton">Loading...</div>
 });
 
-export async function generateStaticParams() {
+const SocialShare = dynamic(() => import('@/components/SocialShare'));
+
+/* export async function generateStaticParams() {
   const posts = await getAllPostSlugs();
   return posts.map((post) => ({ slug: post.slug }));
-}
+} */
 
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const post = await getPostBySlug(resolvedParams.slug);
-
-  return buildMetadata({
-      title: post.title,
-      description: post.excerpt,
-      url: `https://t20worldcupnews.com/${resolvedParams.slug}`,
-      image: post.coverImage.url
+  if (!post) notFound();
+  
+  return generateSEO({
+    title: post.seoOverride.title,
+    description: post.seoOverride.description,
+    url: `/${post.slug}`,
+    image: post.coverImage?.url,
+    type: 'article',
   });
   
 }
@@ -75,8 +79,8 @@ export default async function BlogPost({ params }) {
               src={post.coverImage.url}
               alt={post.coverImage.altText || post.title}
               className="post-hero"
-              width={750}
-              height={400}
+              width={730}
+              height={380}
               priority
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAk0lEQVR4ARyMsQmAMBREzzQWgoM4hhs4hSu4gAtYuJOFhWItKEqakEBIQggkX0x7995jbdtS3/c0jiPN80zTNNEwDNR1HTVNQ8wYA2stiqJAVVWo6xplWSKlhBgjmFIKnHM8z4PrunDfN973hRACzjkwrXUe933Huq5YlgXbtmXorzPvPaSUOM8zH8dxZOEvhxDwAQAA//+Ro3vUAAAABklEQVQDAFlyXgftTnIBAAAAAElFTkSuQmCC"
@@ -95,6 +99,13 @@ export default async function BlogPost({ params }) {
         <Sidebar />
       </div>
     </main>
+
+
+    <SocialShare
+      url={`https://t20worldcupnews.com/${post.slug}`}
+      title={post.title}
+      pinterestMedia={post.coverImage?.url}
+    />
 </>
   );
 }

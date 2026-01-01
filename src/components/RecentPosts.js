@@ -9,18 +9,17 @@ export default async function RecentPosts(){
   <div className="sidebar-box">
     <h3>Recent Posts</h3>
     {posts.map((post) => (
-      <Link key={post.slug} className="recent-item" href={`/${post.slug}`}>
+      <Link key={post.documentId} className="recent-item" href={`/${post.slug}`}>
         <Image
-            src={post.coverImage.url}
-            width={100}
-            height={100}
-            alt={post.coverImage.altText}
-            priority
+            src={post.FeaturedImage.url}
+            width={78}
+            height={90}
+            alt={post.FeaturedImage.alternativeText}
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAk0lEQVR4ARyMsQmAMBREzzQWgoM4hhs4hSu4gAtYuJOFhWItKEqakEBIQggkX0x7995jbdtS3/c0jiPN80zTNNEwDNR1HTVNQ8wYA2stiqJAVVWo6xplWSKlhBgjmFIKnHM8z4PrunDfN973hRACzjkwrXUe933Huq5YlgXbtmXorzPvPaSUOM8zH8dxZOEvhxDwAQAA//+Ro3vUAAAABklEQVQDAFlyXgftTnIBAAAAAElFTkSuQmCC"
           />
         <div>
-          <div className="title">{post.title}</div>
+          <div className="title">{post.Title}</div>
           <div className="meta">{formatDate(post.date)}</div>
         </div>
       </Link>

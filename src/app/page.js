@@ -1,50 +1,45 @@
 import Image from "next/image";
-import { getLatestPosts, getPageBySlug, getFeaturedPost } from "@/lib/queries";
+import { getLatestPosts } from "@/lib/queries";
 import { formatDate } from "@/lib/utils";
-import { generateHomepageSchema, SchemaScript } from "@/lib/schema";
 import Link from "next/link";
-import { buildMetadata } from "@/lib/seo";
+import { generateSEO } from "@/lib/seo";
 import homeimg from "@/images/icc-t20-world-cup-2026-live.webp";
 import Sidebar from "@/components/Sidebar";
 
-export const metadata = buildMetadata({
-  title: "T20 World Cup 2026 Schedule, Score Updates & Watch Online",
+export const metadata = generateSEO({
+  title: "Cricsinfo.com",
   description: "Your front-row seat to T20 World Cup 2026. Get the full schedule (Fixtures PDF), live ball-by-ball scores and coverage of India vs Pakistan from Colombo.",
-  url: "https://t20worldcupnews.com",
+  url: "/",
   image: homeimg.src,
 });
 
 export default async function Home() {
-  const [posts, fpost, page] = await Promise.all([
-    getLatestPosts(6),
-    getFeaturedPost(),
-    getPageBySlug("home"),
+  const [fpost] = await Promise.all([
+    getLatestPosts(7)
   ]);
-  const schemas = generateHomepageSchema(page.content.html);
+console.log(fpost);
   return (
 <>
-<SchemaScript schema={schemas} />
-
     <main className="container">
       <section className="hero">
         <div className="hero-grid">
           <div className="hero-copy">
-            {fpost.categories.map((cat) => (
+            {fpost[0].Categories.map((cat) => (
               <span key={cat.name} className="badge">
                 {cat.name}
               </span>
             ))}
 
-            <h2 className="hero-title">{fpost.title}</h2>
+            <h2 className="hero-title">{fpost[0].Title}</h2>
 
             <p className="meta hero-meta">
-              By {fpost.author.name} | {formatDate(fpost.date)}
+              By {fpost[0].Author.name} | {formatDate(fpost[0].publishedAt)}
             </p>
 
-            <p className="hero-excerpt">{fpost.excerpt}</p>
+            <p className="hero-excerpt">{fpost[0].SEO.metaDescription}</p>
 
             <div className="hero-actions">
-              <Link href={`/${fpost.slug}`} className="btn">
+              <Link href={`/${fpost[0].Slug}`} className="btn">
                 Read more ↗
               </Link>
             </div>
@@ -52,10 +47,10 @@ export default async function Home() {
 
           <div className="hero-media">
             <Image
-              src={fpost.coverImage.url}
+              src={`https://admin.cricsinfo.com${fpost[0].FeaturedImage.url}`}
               width={490}
               height={310}
-              alt={fpost.coverImage.altText}
+              alt={fpost[0].FeaturedImage.alternativeText}
               priority
               fetchPriority="high"
             />
@@ -64,23 +59,25 @@ export default async function Home() {
       </section>
 
       <div className="section-head">
-        <h3 className="section-title">Recent Posts</h3>
-        <Link className="small-link" href="/posts">View all</Link>
+        <h3 className="section-title">Featured Post</h3>
+        <Link className="small-link" href="/posts">All Recent Posts →</Link>
       </div>
 
       <section className="grid-3 mb-1">
-        {posts.map((post) => (
+        {fpost.slice(1).map((post) => (
           <Link
-            key={post.slug}
+            key={post.documentId}
             className="card card-hover category-card"
             href={`/${post.slug}`}
           >
             <Image
-              src={post.coverImage.url}
+              src={post.FeaturedImage.url}
               width={330}
               height={181}
-              alt={fpost.coverImage.altText}
+              alt={post.FeaturedImage.alternativeText}
               className="thumb"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAk0lEQVR4ARyMsQmAMBREzzQWgoM4hhs4hSu4gAtYuJOFhWItKEqakEBIQggkX0x7995jbdtS3/c0jiPN80zTNNEwDNR1HTVNQ8wYA2stiqJAVVWo6xplWSKlhBgjmFIKnHM8z4PrunDfN973hRACzjkwrXUe933Huq5YlgXbtmXorzPvPaSUOM8zH8dxZOEvhxDwAQAA//+Ro3vUAAAABklEQVQDAFlyXgftTnIBAAAAAElFTkSuQmCC"
             />
 
             <div className="row-between card-topline">
@@ -102,8 +99,8 @@ export default async function Home() {
       <div className="layout">
         <article>
           <div className="card article-card">
-            <h1>{page.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: page.content.html }} />
+            {/* <h1>{page.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: page.content.html }} /> */}
           </div>
         </article>
         <Sidebar />

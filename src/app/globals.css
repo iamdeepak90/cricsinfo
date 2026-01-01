@@ -15,7 +15,9 @@
   font-weight: 700;
   letter-spacing: .25px;
 }
-
+.small-link{
+  font-size: 13px;
+}
 .small-link:hover {
   color: var(--text)
 }
@@ -24,7 +26,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg);
-  margin: 6px 0 14px;
+  margin-bottom: 16px;
 }
 
 .card-hover:hover {
@@ -72,12 +74,13 @@ p{font-size: 1rem;}
   border: 1px solid var(--border);
   display: block;
   margin-bottom: 10px;
+  aspect-ratio: 3/1.75;
 }
 
 /* Layout: content + sidebar */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 340px;
+  grid-template-columns: 1fr 330px;
   gap: 18px;
   align-items: start;
 }
@@ -99,7 +102,7 @@ p{font-size: 1rem;}
 .sidebar-box {
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px;
+  padding: 15px;
   background: var(--bg);
   margin-bottom: 12px;
 }
@@ -210,12 +213,16 @@ p{font-size: 1rem;}
 .article-card table {
   border-collapse: collapse;
   width: 100%;
-  display: table;
+  max-width: 81vw;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  display: block;
 }
 
-.article-card table td {
-  border: 1px solid #cccccc;
-  padding: 5px 5px 5px 10px;
+.article-card table td, .article-card table th {
+  border: 1px solid #b5b5b5;
+  padding: 7px 5px 7px 10px;
 }
 
 .article-card table thead {
@@ -245,7 +252,7 @@ blockquote {
 
 /* Footer */
 .site-footer {
-  background: #0b0b0b;
+  background: #961d1e;
   color: #f3f4f6;
   margin-top: 30px;
 }
