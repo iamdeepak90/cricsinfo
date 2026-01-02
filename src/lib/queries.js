@@ -20,6 +20,10 @@ export const LATEST_POSTS_QUERY = `
       Categories{
         name
       }
+      SEO{
+        metaTitle
+        metaDescription
+      }
     }
   }
 `;
