@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/images/t20logo.png";
+import logo from "@/images/cilogo.svg";
 import Link from "next/link";
 
 export default async function Header(){
