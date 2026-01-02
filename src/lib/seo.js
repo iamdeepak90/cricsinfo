@@ -1,7 +1,7 @@
 // lib/seo.js - SIMPLE UNIFIED SEO FUNCTION
 // One function for ALL pages - No complexity, just works
 
-const SITE_URL = 'https://t20worldcupnews.com';
+const SITE_URL = 'https://www.cricsinfo.com';
 const SITE_NAME = 'T20 World Cup News';
 const TWITTER_HANDLE = '@DeepakWin8';
 const DEFAULT_IMAGE = `${SITE_URL}/og-default.jpg`;

@@ -9,7 +9,7 @@ export default async function RecentPosts(){
   <div className="sidebar-box">
     <h3>Recent Posts</h3>
     {posts.map((post) => (
-      <Link key={post.documentId} className="recent-item" href={`/${post.slug}`}>
+      <Link key={post.documentId} className="recent-item" href={`/${post.Slug}`}>
         <Image
             src={`https://admin.cricsinfo.com${post.FeaturedImage.url}`}
             width={78}
@@ -20,7 +20,7 @@ export default async function RecentPosts(){
           />
         <div>
           <div className="title">{post.Title}</div>
-          <div className="meta">{formatDate(post.date)}</div>
+          <div className="meta">{formatDate(post.publishedDate)}</div>
         </div>
       </Link>
     ))}

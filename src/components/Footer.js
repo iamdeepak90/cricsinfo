@@ -5,7 +5,7 @@ export default function Footer(){
   return (
 <footer className="site-footer">
   <div className="container footer-row">
-    <div>© T20 World Cup 2026 | This is not an official website.</div>
+    <div>© 2026 - CricsInfo.com</div>
     <div className="footer-links">
       <Link href="/about-us">About Us</Link>
       <Link href="/disclaimer">Disclaimer</Link>

@@ -1,4 +1,4 @@
-const SITE_URL = 'https://t20worldcupnews.com';
+const SITE_URL = 'https://www.cricsinfo.com';
 const SITE_NAME = 'T20 World Cup News';
 const LOGO_URL = `${SITE_URL}/logo.webp`;
 

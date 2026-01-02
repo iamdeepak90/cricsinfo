@@ -10,7 +10,7 @@ const noticia = Noticia_Text({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://t20worldcupnews.com'),
+  metadataBase: new URL('https://www.cricsinfo.com'),
   robots: {
     index: true,
     follow: true
