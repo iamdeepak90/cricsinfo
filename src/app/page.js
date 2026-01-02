@@ -7,8 +7,8 @@ import homeimg from "@/images/icc-t20-world-cup-2026-live.webp";
 import Sidebar from "@/components/Sidebar";
 
 export const metadata = generateSEO({
-  title: "Cricsinfo.com",
-  description: "Your front-row seat to T20 World Cup 2026. Get the full schedule (Fixtures PDF), live ball-by-ball scores and coverage of India vs Pakistan from Colombo.",
+  title: "CricsInfo | Live Cricket Scores, Latest News & Match Updates",
+  description: "Stay updated with the latest cricket news, expert analysis, live match coverage, schedules, scorecards and team rankings, player stats. Follow every Test, ODI, T20 & league action.",
   url: "/",
   image: homeimg.src,
 });
@@ -17,7 +17,6 @@ export default async function Home() {
   const [fpost] = await Promise.all([
     getLatestPosts(7)
   ]);
-console.log(fpost);
   return (
 <>
     <main className="container">

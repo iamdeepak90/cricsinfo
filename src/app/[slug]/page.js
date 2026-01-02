@@ -26,7 +26,7 @@ export default async function BlogPost({ params }) {
   const post = await getPostBySlug(resolvedParams.slug, {
     next: { revalidate: 3600 },
   });
-  console.log(post);
+
   if (!post) notFound();
 
   return (

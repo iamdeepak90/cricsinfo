@@ -20,9 +20,6 @@ export const LATEST_POSTS_QUERY = `
       Categories{
         name
       }
-      SEO{
-        metaDescription
-      }
     }
   }
 `;
@@ -55,6 +52,7 @@ const POST_BY_SLUG_QUERY = `
         name
       }
       SEO{
+        metaTitle
         metaDescription
       }
     }
